@@ -38,7 +38,6 @@ router.post('/send', async (req, res) => {
   // Get data from db 
   try {
     const file = await File.findOne({ uuid: uuid });
-    console.log(file);
     if(file.sender) {
       return res.status(422).send({ error: 'Email already sent once.'});
     }
